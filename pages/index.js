@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar'
 import Hero from '../components/Hero'
 import Services from '../components/Services'
 import Footer from '../components/Footer'
+import Courses from '../components/Courses'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
 
       <main >
         <Services />
+        <Courses />
       </main>
 
       <Footer />

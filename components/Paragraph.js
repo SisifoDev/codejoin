@@ -24,6 +24,12 @@ const Paragraph = ({ children, size, color, isMarginless }) => {
                 .color-secondary {
                 color: var(--lightGray);
                 }
+
+                .color-regular{
+                    
+                    font-weight: 300;
+                }
+
                 .paragraph :global(strong){
                     color: var(--orange);
                 }
