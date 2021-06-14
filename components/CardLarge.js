@@ -3,14 +3,16 @@ import Paragraph from './Paragraph'
 import Title from './Title'
 import Icon from './Icon'
 import Button from './Button'
+import ImageCardLarge from './ImageCardLarge';
 
 const CardLarge = ({ title, paragraph, icon, image }) => {
     return (
         <div className="card-large">
             <div className="card-container">
                 <div className="imageCard-container">
-                    <img src="/courses/html.svg" alt="Course image" />
+                    <ImageCardLarge />
                 </div>
+
                 {/* <div className="image-container"><Icon name={icon} size="lg" /></div> */}
 
                 <div className="card-title">
@@ -37,6 +39,7 @@ const CardLarge = ({ title, paragraph, icon, image }) => {
                     grid-template-columns: 320px 1fr 1fr 1fr;
                     grid-template-rows: 40px 1fr 80px;
                     grid-gap: 10px;
+                    
                     /* flex-direction: column; */
                     /* align-items: center; */
                     width: 1144px;
@@ -52,7 +55,7 @@ const CardLarge = ({ title, paragraph, icon, image }) => {
                 .imageCard-container{
                     grid-area: imageArea;
                     margin: 0;
-                    padding: 0;
+                    padding: 18px;
 
                 }
                 .imageCard-container img{

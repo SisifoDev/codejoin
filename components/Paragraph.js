@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Paragraph = ({ children, size, color, isMarginless }) => {
+const Paragraph = ({ children, size, color, isMarginless, isCentered }) => {
     return (
         <>
             <p
                 className={`paragraph size-${size} color-${color} ${isMarginless ? "is-marginless" : ""
-                    }`}
+                    } ${isCentered ? "is-centered" : ""
+                    } `}
             >
                 {children}
             </p>
@@ -26,7 +27,7 @@ const Paragraph = ({ children, size, color, isMarginless }) => {
                 }
 
                 .color-regular{
-                    
+                    color: var(--white);
                     font-weight: 300;
                 }
 
@@ -40,6 +41,10 @@ const Paragraph = ({ children, size, color, isMarginless }) => {
 
                 .size-sm {
                 font-size: 0.75rem;
+                }
+
+                .is-centered {
+                text-align: center;
                 }
 
                 .is-marginless {
