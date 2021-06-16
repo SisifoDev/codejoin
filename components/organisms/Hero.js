@@ -1,7 +1,7 @@
 import React from 'react';
-import Title from '../components/Title'
-import Button from '../components/Button'
-import Icon from './Icon'
+import Title from '../atoms/Title'
+import Button from '../molecules/Button'
+import Icon from '../atoms/Icon'
 
 const Hero = () => {
     return (

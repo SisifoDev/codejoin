@@ -1,11 +1,56 @@
 import React from 'react';
-import Paragraph from './Paragraph'
-import Title from './Title'
-import Icon from './Icon'
-import Button from './Button'
-import ImageCardLarge from './ImageCardLarge';
 
-const CardLarge = ({ title, paragraph, icon, image }) => {
+import Title from '../atoms/Title'
+
+import Button from '../molecules/Button'
+import ImageCardLarge from '../molecules/ImageCardLarge';
+import CoursesText from '../molecules/CoursesText';
+
+const CardLarge = () => {
+    const courses = [
+        {
+            courseTag: {
+                name: 'HTML',
+                image: '/images/imagencurso.svg'
+            },
+            content: [
+                {
+                    title: 'Conceptos Básicos',
+                    description: `Conoce y comprende los conceptos básicos del Lenguaje de  Marcado de Hipertexto`
+                },
+                {
+                    title: 'Etiquetas semánticas',
+                    description: `Completed the course: 
+                    UI Design for developers`
+                },
+                {
+                    title: 'Creación de componentes',
+                    description: `Completed the course: 
+                    UI Design for developers`
+                },
+                {
+                    title: 'Conceptos Básicos 3',
+                    description: `3 Conoce y comprende los conceptos básicos del Lenguaje de  Marcado de Hipertexto`
+                },
+                {
+                    title: 'Conceptos Básicos 4',
+                    description: `4 Conoce y comprende los conceptos básicos del Lenguaje de  Marcado de Hipertexto`
+                }
+            ]
+        }
+
+    ]
+
+    const datosCurso = courses.map(course => {
+        return course.content.map(contents => {
+            return { name: course.courseTag.name, img: course.courseTag.image, content: contents.title, desc: contents.description }
+        })
+    })
+
+    console.log("Datos del curso => ", datosCurso[0].map((datos) => datos.content))
+
+
+
     return (
         <div className="card-large">
             <div className="card-container">
@@ -13,14 +58,12 @@ const CardLarge = ({ title, paragraph, icon, image }) => {
                     <ImageCardLarge />
                 </div>
 
-                {/* <div className="image-container"><Icon name={icon} size="lg" /></div> */}
-
                 <div className="card-title">
                     <Title size="sm" color="secondary" weight="bold">TEMAS A DESARROLLAR</Title>
                 </div>
                 <div className="text-container">
-                    <Title size="sm" color="secondary" weight="bold">Conceptos Básicos</Title>
-                    <Paragraph color="regular" isMarginless>Conoce y comprende los<br /> conceptos básicos del Lenguaje<br /> de  Marcado de Hipertexto</Paragraph>
+                    {/* <CoursesText title={courses[0].sectionCourse[0].title} description={courses[0].sectionCourse[0].description} /> */}
+                    {/* {courses.map((course) => <CoursesText title={course.html[0].title} description={course.html[0].description} />)} */}
                 </div>
                 <div className="button-action">
                     <Button>Ver curso</Button>
@@ -36,7 +79,7 @@ const CardLarge = ({ title, paragraph, icon, image }) => {
                     grid-template-areas: "imageArea titleArea titleArea titleArea"
                                          "imageArea textArea textArea textArea"
                                          "imageArea buttonArea buttonArea buttonArea";
-                    grid-template-columns: 320px 1fr 1fr 1fr;
+                    grid-template-columns: 275px 1fr 1fr 1fr;
                     grid-template-rows: 40px 1fr 80px;
                     grid-gap: 10px;
                     
@@ -63,6 +106,8 @@ const CardLarge = ({ title, paragraph, icon, image }) => {
                 }
                 .text-container{
                     grid-area: textArea;
+                    display: flex;
+                    flex-wrap: wrap;
                 }
                 .card-title{
                     height: 100%;
@@ -74,8 +119,10 @@ const CardLarge = ({ title, paragraph, icon, image }) => {
                 }
                 .button-action{
                     grid-area: buttonArea;
-                    width: 140px;
-                    justify-self: center;
+                    width: 100%;
+                    /* justify-self: calc(center - 20px); */
+                    padding-left: calc(50% - 120px);
+                    
                 }
                
             `}</style>

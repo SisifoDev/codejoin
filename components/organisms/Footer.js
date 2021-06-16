@@ -1,6 +1,6 @@
 import React from 'react';
-import Paragraph from './Paragraph';
-import Icon from './Icon'
+import Paragraph from '../atoms/Paragraph';
+import Icon from '../atoms/Icon'
 
 const Footer = () => {
     return (

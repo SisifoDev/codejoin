@@ -1,7 +1,7 @@
 import React from 'react';
-import Paragraph from './Paragraph'
-import Title from './Title'
-import Icon from './Icon'
+import Paragraph from '../atoms/Paragraph'
+import Title from '../atoms/Title'
+import Icon from '../atoms/Icon'
 
 const CardServices = ({ title, paragraph, image }) => {
     return (
@@ -12,6 +12,7 @@ const CardServices = ({ title, paragraph, image }) => {
                     <Title size="md" color="secondary" isCentered>{title}</Title>
                     <Paragraph>{paragraph}</Paragraph>
                 </div>
+
             </div>
             <style jsx>{`
                 .card-container{

@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import NavBar from '../components/NavBar'
-import Hero from '../components/Hero'
-import Services from '../components/Services'
-import Footer from '../components/Footer'
-import Courses from '../components/Courses'
+import NavBar from '../components/organisms/NavBar'
+import Hero from '../components/organisms/Hero'
+import Services from '../components/molecules/Services'
+import Footer from '../components/organisms/Footer'
+import Courses from '../components/organisms/Courses'
 
 export default function Home() {
   return (

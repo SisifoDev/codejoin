@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Title = ({ children, color, size, weight, isCentered }) => {
+const Title = ({ children, color, size, weight, isCentered, isMarginless }) => {
     return (
         <>
             <h1 className={`principal color-${color} size-${size} font-${weight} ${isCentered ? "is-centered" : ""
-                }`}>
+                } ${isMarginless ? "is-marginless" : ""}`}>
                 {children}
             </h1>
             <style jsx>{`
@@ -48,6 +48,11 @@ const Title = ({ children, color, size, weight, isCentered }) => {
                 }
                 .is-centered {
                 text-align: center;
+                }
+                .is-marginless {
+                margin: 0;
+                padding: 0 0 10px 0;
+                
                 }
             `}</style>
         </>
