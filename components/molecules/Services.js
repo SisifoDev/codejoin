@@ -23,7 +23,7 @@ const Services = () => {
     return (
         <>
             <section id="services" className='section-services'>
-                {services.map((service) => <CardServices title={service.title} paragraph={service.paragraph} image={service.img} />)}
+                {services.map((service) => <CardServices key={service.title} title={service.title} paragraph={service.paragraph} image={service.img} />)}
             </section>
             <style jsx>{`
             .section-services{

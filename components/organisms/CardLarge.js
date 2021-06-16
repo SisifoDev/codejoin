@@ -6,64 +6,23 @@ import Button from '../molecules/Button'
 import ImageCardLarge from '../molecules/ImageCardLarge';
 import CoursesText from '../molecules/CoursesText';
 
-const CardLarge = () => {
-    const courses = [
-        {
-            courseTag: {
-                name: 'HTML',
-                image: '/images/imagencurso.svg'
-            },
-            content: [
-                {
-                    title: 'Conceptos Básicos',
-                    description: `Conoce y comprende los conceptos básicos del Lenguaje de  Marcado de Hipertexto`
-                },
-                {
-                    title: 'Etiquetas semánticas',
-                    description: `Completed the course: 
-                    UI Design for developers`
-                },
-                {
-                    title: 'Creación de componentes',
-                    description: `Completed the course: 
-                    UI Design for developers`
-                },
-                {
-                    title: 'Conceptos Básicos 3',
-                    description: `3 Conoce y comprende los conceptos básicos del Lenguaje de  Marcado de Hipertexto`
-                },
-                {
-                    title: 'Conceptos Básicos 4',
-                    description: `4 Conoce y comprende los conceptos básicos del Lenguaje de  Marcado de Hipertexto`
-                }
-            ]
-        }
 
-    ]
-
-    const datosCurso = courses.map(course => {
-        return course.content.map(contents => {
-            return { name: course.courseTag.name, img: course.courseTag.image, content: contents.title, desc: contents.description }
-        })
-    })
-
-    console.log("Datos del curso => ", datosCurso[0].map((datos) => datos.content))
-
+const CardLarge = ({ courseTitle, courseResume, imageRute, contentCourse }) => {
 
 
     return (
         <div className="card-large">
             <div className="card-container">
                 <div className="imageCard-container">
-                    <ImageCardLarge />
+                    <ImageCardLarge courseTitle={courseTitle} courseResume={courseResume} imageRute={imageRute} />
                 </div>
 
                 <div className="card-title">
-                    <Title size="sm" color="secondary" weight="bold">TEMAS A DESARROLLAR</Title>
+                    <Title size="sm" color="secondary" weight="bold">CONTENIDO DEL CURSO</Title>
                 </div>
                 <div className="text-container">
-                    {/* <CoursesText title={courses[0].sectionCourse[0].title} description={courses[0].sectionCourse[0].description} /> */}
-                    {/* {courses.map((course) => <CoursesText title={course.html[0].title} description={course.html[0].description} />)} */}
+                    {contentCourse.map((content) => <CoursesText key={content.title} title={content.title} description={content.description} />)}
+
                 </div>
                 <div className="button-action">
                     <Button>Ver curso</Button>

@@ -2,14 +2,15 @@ import React from 'react';
 import Title from '../atoms/Title';
 import Paragraph from '../atoms/Paragraph';
 
-const ImageCardLarge = () => {
+const ImageCardLarge = ({ courseTitle, courseResume, imageRute }) => {
+
     return (
         <>
             <div className="image-container">
 
-                <img src="/courses/html.svg" alt="" />
-                <Title size="sm">Curso de HTML</Title>
-                <Paragraph color="regular" isCentered isMarginless>Aprende  desde los conceptos básicos hasta diseñar una página web completa</Paragraph>
+                <img src={`/courses/${imageRute}.svg`} alt="" />
+                <Title size="sm">{courseTitle}</Title>
+                <Paragraph color="regular" isCentered isMarginless>{courseResume}</Paragraph>
 
             </div>
 
